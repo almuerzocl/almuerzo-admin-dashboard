@@ -46,8 +46,7 @@ export async function POST(req: Request) {
             email,
             first_name,
             last_name,
-            role: role,
-            is_active: true
+            role: role
         };
 
         if (restaurant_id) {

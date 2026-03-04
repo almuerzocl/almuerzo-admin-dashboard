@@ -1,0 +1,102 @@
+
+> almuerzo-admin-dashboard@0.1.0 build
+> next build
+
+⚠ `eslint` configuration in next.config.ts is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/estebanzarate/Documents/Almuerzocl/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+Error: Can't resolve 'tw-animate-css' in '/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/app'
+    [2m[at finishWithoutResolve (/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:586:18)][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:678:14][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:739:5][0m
+    [2m[at eval (eval at create (/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:739:5][0m
+    [2m[at eval (eval at create (/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:739:5][0m
+    [2m[at eval (eval at create (/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/enhanced-resolve/lib/Resolver.js:739:5][0m {
+  details: "resolve 'tw-animate-css' in '/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/app'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/package.json (relative path: ./src/app)\n' +
+    '    resolve as module\n' +
+    "      /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/app/node_modules doesn't exist or is not a directory\n" +
+    "      /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/node_modules doesn't exist or is not a directory\n" +
+    '      looking for modules in /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules\n' +
+    '        single file module\n' +
+    '          using description file: /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/package.json (relative path: ./node_modules/tw-animate-css)\n' +
+    '            no extension\n' +
+    "              /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tw-animate-css doesn't exist\n" +
+    '            .css\n' +
+    "              /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tw-animate-css.css doesn't exist\n" +
+    "        /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/tw-animate-css doesn't exist\n" +
+    '      looking for modules in /Users/estebanzarate/Documents/Almuerzocl/node_modules\n' +
+    '        single file module\n' +
+    '          using description file: /Users/estebanzarate/Documents/Almuerzocl/package.json (relative path: ./node_modules/tw-animate-css)\n' +
+    '            no extension\n' +
+    "              /Users/estebanzarate/Documents/Almuerzocl/node_modules/tw-animate-css doesn't exist\n" +
+    '            .css\n' +
+    "              /Users/estebanzarate/Documents/Almuerzocl/node_modules/tw-animate-css.css doesn't exist\n" +
+    "        /Users/estebanzarate/Documents/Almuerzocl/node_modules/tw-animate-css doesn't exist\n" +
+    "      /Users/estebanzarate/Documents/node_modules doesn't exist or is not a directory\n" +
+    '      looking for modules in /Users/estebanzarate/node_modules\n' +
+    '        single file module\n' +
+    '          No description file found in /Users/estebanzarate/node_modules or above\n' +
+    '          no extension\n' +
+    "            /Users/estebanzarate/node_modules/tw-animate-css doesn't exist\n" +
+    '          .css\n' +
+    "            /Users/estebanzarate/node_modules/tw-animate-css.css doesn't exist\n" +
+    "        /Users/estebanzarate/node_modules/tw-animate-css doesn't exist\n" +
+    "      /Users/node_modules doesn't exist or is not a directory\n" +
+    "      /node_modules doesn't exist or is not a directory"
+}
+Turbopack build encountered 1 warnings:
+./almuerzo-admin-dashboard/tailwind.config.ts:75:15
+Module not found: Can't resolve 'tailwindcss-animate'
+[0m [90m 73 |[39m         }
+ [90m 74 |[39m     }[33m,[39m
+[31m[1m>[22m[39m[90m 75 |[39m     plugins[33m:[39m [require([32m"tailwindcss-animate"[39m)][33m,[39m
+ [90m    |[39m               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 76 |[39m }[33m;[39m
+ [90m 77 |[39m [36mexport[39m [36mdefault[39m config[33m;[39m
+ [90m 78 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./almuerzo-admin-dashboard/src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/app/globals.css:1:1: Can't resolve 'tw-animate-css' in '/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/src/app'
+    at Input.error (almuerzo-admin-dashboard/node_modules/postcss/lib/input.js:135:16) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/70bad_8b834c9f._.js:4651:22]
+    at Root.error (almuerzo-admin-dashboard/node_modules/postcss/lib/node.js:146:32) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/70bad_8b834c9f._.js:928:38]
+    [at Object.Once (/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/node_modules/@tailwindcss/postcss/dist/index.js:10:6913)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:104:5)]
+    at async LazyResult.runAsync (almuerzo-admin-dashboard/node_modules/postcss/lib/lazy-result.js:293:11) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/70bad_8b834c9f._.js:6214:21]
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/[root-of-the-server]__2e593753._.js:146:36]
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/[root-of-the-server]__c4b28452._.js:443:31]
+
+Import trace:
+  Client Component Browser:
+    ./almuerzo-admin-dashboard/src/app/globals.css [Client Component Browser]
+    ./almuerzo-admin-dashboard/src/app/layout.tsx [Server Component]
+
+
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/[root-of-the-server]__2e593753._.js:146:36])
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/Users/estebanzarate/Documents/Almuerzocl/almuerzo-admin-dashboard/.next/build/chunks/[root-of-the-server]__c4b28452._.js:443:31])
