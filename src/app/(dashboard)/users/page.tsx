@@ -17,8 +17,9 @@ interface ExtendedUser {
     email: string;
     reset_password?: string;
     // For Restaurant/Admin users
-    role?: 'administrador' | 'reservas' | 'pedidos' | 'user' | 'restaurant' | 'admin' | 'superadmin' | string;
+    role?: 'administrador' | 'reservas' | 'pedidos' | 'user' | 'restaurant' | 'admin' | 'super_admin' | string;
     usage_ratio?: string; // "1/3"
+    restaurant_id?: string;
 }
 
 export default function UsersAdmin() {
@@ -61,13 +62,14 @@ export default function UsersAdmin() {
                 email: u.email || '',
                 reset_password: "",
                 role: u.role as any,
-                usage_ratio: u.restaurant_id ? "—" : undefined
+                usage_ratio: u.restaurant_id ? "—" : undefined,
+                restaurant_id: u.restaurant_id
             }));
 
-            // Split users into the three buckets based on role
+            // Split users into the three buckets based on role/restaurant binding
             setPwaUsers(mapped.filter(u => u.role === 'user' || !u.role));
-            setRestaurantUsers(mapped.filter(u => u.role === 'restaurant'));
-            setAdminUsers(mapped.filter(u => u.role === 'admin' || u.role === 'superadmin'));
+            setRestaurantUsers(mapped.filter(u => u.restaurant_id)); // Restaurant admins have constraints scoped to their restaurant
+            setAdminUsers(mapped.filter(u => (u.role === 'admin' || u.role === 'super_admin') && !u.restaurant_id));
 
         } catch (err: any) {
             console.error("Error fetching users:", err);
@@ -194,11 +196,10 @@ export default function UsersAdmin() {
                                             <td className="px-6 py-4">
                                                 <span className={cn(
                                                     "px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-widest",
-                                                    user.role === 'administrador' ? "bg-amber-500/10 text-amber-500 border border-amber-500/20" :
-                                                        user.role === 'reservas' ? "bg-blue-500/10 text-blue-500 border border-blue-500/20" :
-                                                            "bg-purple-500/10 text-purple-500 border border-purple-500/20"
+                                                    !user.restaurant_id && user.role === 'admin' ? "bg-amber-500/10 text-amber-500 border border-amber-500/20" :
+                                                        "bg-purple-500/10 text-purple-500 border border-purple-500/20"
                                                 )}>
-                                                    {user.role}
+                                                    {user.restaurant_id ? "Admin Restorán" : user.role}
                                                 </span>
                                             </td>
                                             <td className="px-6 py-4 text-center">

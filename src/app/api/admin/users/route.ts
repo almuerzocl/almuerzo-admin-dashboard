@@ -40,13 +40,17 @@ export async function POST(req: Request) {
 
         const user = authData.user;
 
+        // Check constraint profiles_role_check allows ('user', 'admin', 'super_admin')
+        // We map 'restaurant' from the UI logic to 'admin' so the DB insertion succeeds.
+        const dbRole = role === 'restaurant' ? 'admin' : role;
+
         // 2. Insert into profiles with the correct role and restaurant_id
         const profilePayload: any = {
             id: user.id,
             email,
             first_name,
             last_name,
-            role: role
+            role: dbRole
         };
 
         if (restaurant_id) {
