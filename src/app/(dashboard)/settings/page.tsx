@@ -32,7 +32,7 @@ export default function SettingsAdmin() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                    <h1 className="text-3xl font-black tracking-tight text-zinc-900 flex items-center gap-3">
                         Configuración Global
                     </h1>
                     <p className="text-slate-400 font-medium">Variables de entorno y salud de la infraestructura</p>
@@ -55,7 +55,7 @@ export default function SettingsAdmin() {
                             <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
                                 <Settings className="w-5 h-5" />
                             </div>
-                            <h3 className="text-xl font-black text-white tracking-tight leading-none uppercase">Reglas de Negocio</h3>
+                            <h3 className="text-xl font-black text-zinc-900 tracking-tight leading-none uppercase">Reglas de Negocio</h3>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -66,7 +66,7 @@ export default function SettingsAdmin() {
                                     <input
                                         type="number"
                                         defaultValue={2.5}
-                                        className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-semibold"
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-zinc-900 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-semibold"
                                     />
                                 </div>
                             </div>
@@ -77,7 +77,7 @@ export default function SettingsAdmin() {
                                     <input
                                         type="number"
                                         defaultValue={10}
-                                        className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-semibold"
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-zinc-900 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-semibold"
                                     />
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ export default function SettingsAdmin() {
                             <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400">
                                 <ShieldAlert className="w-5 h-5" />
                             </div>
-                            <h3 className="text-xl font-black text-white tracking-tight leading-none uppercase">Seguridad y Acceso</h3>
+                            <h3 className="text-xl font-black text-zinc-900 tracking-tight leading-none uppercase">Seguridad y Acceso</h3>
                         </div>
 
                         <div className="space-y-4">
@@ -110,7 +110,7 @@ export default function SettingsAdmin() {
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center justify-between p-4 hover:bg-slate-800/10 rounded-2xl transition-colors group">
                                     <div className="space-y-1">
-                                        <p className="text-sm font-black text-white flex items-center gap-2">
+                                        <p className="text-sm font-black text-zinc-900 flex items-center gap-2">
                                             {item.label}
                                             {item.enabled ? <CheckCircle2 className="w-3 h-3 text-emerald-400" /> : <AlertCircle className="w-3 h-3 text-slate-600" />}
                                         </p>
@@ -134,7 +134,7 @@ export default function SettingsAdmin() {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[80px] rounded-full group-hover:bg-blue-500/10 transition-all duration-1000" />
 
                         <div className="space-y-1 relative">
-                            <h3 className="text-xl font-black text-white flex items-center gap-2">
+                            <h3 className="text-xl font-black text-zinc-900 flex items-center gap-2">
                                 <Server className="w-5 h-5 text-blue-400" />
                                 Infraestructura
                             </h3>
@@ -156,7 +156,7 @@ export default function SettingsAdmin() {
                                         <service.icon className="w-5 h-5" />
                                     </div>
                                     <div className="flex-1">
-                                        <p className="text-xs font-black text-white">{service.name}</p>
+                                        <p className="text-xs font-black text-zinc-900">{service.name}</p>
                                         <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{service.status}</p>
                                     </div>
                                     <div className="text-right">
@@ -176,7 +176,7 @@ export default function SettingsAdmin() {
                             <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-500">
                                 <Wrench className="w-4 h-4" />
                             </div>
-                            <p className="text-sm font-black text-white">Debug Tools</p>
+                            <p className="text-sm font-black text-zinc-900">Debug Tools</p>
                         </div>
                         <p className="text-xs text-slate-500 font-medium">Accede a las herramientas de desarrollador para depuración profunda de bases de datos y flujos de reserva.</p>
                         <button className="w-full py-3 bg-slate-800/10 hover:bg-slate-800 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all border border-blue-500/10">

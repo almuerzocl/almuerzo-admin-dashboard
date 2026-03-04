@@ -41,10 +41,10 @@ export default function DashboardLayout({
     ];
 
     return (
-        <div className="min-h-screen bg-black text-zinc-100 flex">
+        <div className="min-h-screen bg-zinc-50 text-zinc-800 flex">
             {/* Sidebar */}
             <aside className={cn(
-                "bg-zinc-950 border-r border-zinc-800 transition-all duration-300 flex flex-col fixed inset-y-0 z-50",
+                "bg-white border-r border-zinc-200 transition-all duration-300 flex flex-col fixed inset-y-0 z-50",
                 isSidebarOpen ? "w-64" : "w-20"
             )}>
                 <div className="p-6 flex items-center gap-3">
@@ -67,17 +67,17 @@ export default function DashboardLayout({
                                     "flex items-center gap-3 px-3 py-3 rounded-xl transition-all group",
                                     isActive
                                         ? "bg-blue-600/10 text-blue-500 border border-blue-500/20"
-                                        : "text-zinc-400 hover:bg-zinc-900 hover:text-white"
+                                        : "text-zinc-400 hover:bg-zinc-50 hover:text-zinc-900"
                                 )}
                             >
-                                <item.icon className={cn("w-5 h-5", isActive ? "text-blue-500" : "group-hover:text-white")} />
+                                <item.icon className={cn("w-5 h-5", isActive ? "text-blue-500" : "group-hover:text-zinc-900")} />
                                 {isSidebarOpen && <span className="font-bold text-sm">{item.name}</span>}
                             </Link>
                         );
                     })}
                 </nav>
 
-                <div className="p-4 border-t border-zinc-800">
+                <div className="p-4 border-t border-zinc-200">
                     <button className="flex items-center gap-3 px-3 py-3 w-full text-zinc-400 hover:text-red-400 transition-colors">
                         <LogOut className="w-5 h-5" />
                         {isSidebarOpen && <span className="font-bold text-sm">Cerrar Sesión</span>}
@@ -91,11 +91,11 @@ export default function DashboardLayout({
                 isSidebarOpen ? "ml-64" : "ml-20"
             )}>
                 {/* Header */}
-                <header className="h-20 bg-zinc-950/50 backdrop-blur-md border-b border-zinc-800 flex items-center justify-between px-8 sticky top-0 z-40">
+                <header className="h-20 bg-white/50 backdrop-blur-md border-b border-zinc-200 flex items-center justify-between px-8 sticky top-0 z-40">
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                            className="p-2 hover:bg-zinc-900 rounded-lg text-zinc-400"
+                            className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-400"
                         >
                             {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                         </button>
@@ -103,16 +103,16 @@ export default function DashboardLayout({
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <button className="relative p-2 text-zinc-400 hover:text-white transition-colors">
+                        <button className="relative p-2 text-zinc-400 hover:text-zinc-900 transition-colors">
                             <Bell className="w-5 h-5" />
                             <span className="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                         </button>
-                        <div className="flex items-center gap-3 pl-6 border-l border-zinc-800">
+                        <div className="flex items-center gap-3 pl-6 border-l border-zinc-200">
                             <div className="text-right hidden sm:block">
-                                <p className="text-xs font-black text-white">Super Admin</p>
-                                <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Global Ops</p>
+                                <p className="text-xs font-black text-zinc-900">Super Admin</p>
+                                <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Global Ops</p>
                             </div>
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full border-2 border-zinc-800 flex items-center justify-center font-black text-sm">
+                            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full border-2 border-zinc-200 flex items-center justify-center font-black text-sm">
                                 SA
                             </div>
                         </div>

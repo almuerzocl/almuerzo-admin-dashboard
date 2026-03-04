@@ -82,11 +82,11 @@ export default function AdminDashboardPage() {
 
     if (loading) {
         return <div className="animate-pulse space-y-8">
-            <div className="h-10 w-48 bg-zinc-800 rounded-lg" />
+            <div className="h-10 w-48 bg-zinc-100 rounded-lg" />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[1, 2, 3, 4].map(i => <div key={i} className="h-32 bg-zinc-800 rounded-2xl" />)}
+                {[1, 2, 3, 4].map(i => <div key={i} className="h-32 bg-zinc-100 rounded-2xl" />)}
             </div>
-            <div className="h-96 bg-zinc-800 rounded-3xl" />
+            <div className="h-96 bg-zinc-100 rounded-3xl" />
         </div>;
     }
 
@@ -95,14 +95,14 @@ export default function AdminDashboardPage() {
             <div className="space-y-1">
                 <h1 className="text-3xl font-black tracking-tight flex items-center gap-3">
                     Vista General <span className="text-blue-500/20">—</span>
-                    <span className="text-zinc-500 text-lg font-bold uppercase tracking-widest mt-1">Global Metrics</span>
+                    <span className="text-zinc-400 text-lg font-bold uppercase tracking-widest mt-1">Global Metrics</span>
                 </h1>
-                <p className="text-zinc-500 font-medium">Estado actual de todo el ecosistema Almuerzo.cl</p>
+                <p className="text-zinc-400 font-medium">Estado actual de todo el ecosistema Almuerzo.cl</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {cards.map((card, i) => (
-                    <div key={i} className="bg-zinc-950 border border-zinc-800 p-6 rounded-[2rem] hover:border-zinc-700 transition-all shadow-xl shadow-black/20 group">
+                    <div key={i} className="bg-white border border-zinc-200 p-6 rounded-[2rem] hover:border-zinc-300 transition-all shadow-xl shadow-black/20 group">
                         <div className="flex justify-between items-start mb-4">
                             <div className={cn("p-3 rounded-2xl", card.bg)}>
                                 <card.icon className={cn("w-6 h-6", card.color)} />
@@ -111,7 +111,7 @@ export default function AdminDashboardPage() {
                         </div>
                         <div className="space-y-1">
                             <p className="text-2xl font-black tracking-tighter">{card.value}</p>
-                            <p className="text-xs font-bold text-zinc-500">{card.title}</p>
+                            <p className="text-xs font-bold text-zinc-400">{card.title}</p>
                         </div>
                         <div className="mt-4 pt-4 border-t border-zinc-900/50 flex items-center gap-1.5 overflow-hidden">
                             <div className="w-1.5 h-1.5 rounded-full bg-green-500" />

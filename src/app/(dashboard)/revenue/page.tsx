@@ -129,7 +129,7 @@ export default function RevenueAdmin() {
     if (loading) {
         return <div className="flex justify-center flex-col items-center py-20 mt-20 gap-4">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-            <p className="text-zinc-500 font-medium">Cargando métricas financieras...</p>
+            <p className="text-zinc-400 font-medium">Cargando métricas financieras...</p>
         </div>;
     }
 
@@ -138,7 +138,7 @@ export default function RevenueAdmin() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                    <h1 className="text-3xl font-black tracking-tight text-zinc-900 flex items-center gap-3">
                         Ingresos Globales
                     </h1>
                     <p className="text-slate-400 font-medium">Análisis de transacciones y performance financiera</p>
@@ -176,7 +176,7 @@ export default function RevenueAdmin() {
                         <div className="space-y-1">
                             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
                             <div className="flex items-end gap-2">
-                                <p className="text-2xl font-black text-white leading-none">{stat.value}</p>
+                                <p className="text-2xl font-black text-zinc-900 leading-none">{stat.value}</p>
                                 <span className={cn(
                                     "text-[10px] font-black px-1.5 py-0.5 rounded-md flex items-center gap-0.5",
                                     stat.positive ? "bg-emerald-500/10 text-emerald-400" : "bg-rose-500/10 text-rose-400"
@@ -195,7 +195,7 @@ export default function RevenueAdmin() {
                 <div className="lg:col-span-3 bg-slate-900/50 border border-slate-800 p-8 rounded-[3rem] space-y-6">
                     <div className="flex justify-between items-center">
                         <div className="space-y-1">
-                            <h3 className="text-xl font-black text-white flex items-center gap-2">
+                            <h3 className="text-xl font-black text-zinc-900 flex items-center gap-2">
                                 <BarChart3 className="w-5 h-5 text-blue-500" />
                                 Tendencia Semanal
                             </h3>
@@ -230,7 +230,7 @@ export default function RevenueAdmin() {
             {/* Recent Transactions List */}
             <div className="space-y-4">
                 <div className="flex items-center justify-between px-2">
-                    <h3 className="text-xl font-black text-white tracking-tight">Transacciones Recientes</h3>
+                    <h3 className="text-xl font-black text-zinc-900 tracking-tight">Transacciones Recientes</h3>
                     <button className="text-[10px] font-black uppercase text-blue-400 tracking-widest hover:text-blue-300 transition-colors">Ver Todo</button>
                 </div>
 
@@ -241,7 +241,7 @@ export default function RevenueAdmin() {
                                 <CreditCard className="w-5 h-5" />
                             </div>
                             <div className="flex-1 space-y-1">
-                                <p className="text-sm font-black text-white">{tx.rest}</p>
+                                <p className="text-sm font-black text-zinc-900">{tx.rest}</p>
                                 <div className="flex items-center gap-3 text-[10px] font-bold text-slate-500 uppercase tracking-tight">
                                     <span>{tx.id}</span>
                                     <span>•</span>
@@ -249,7 +249,7 @@ export default function RevenueAdmin() {
                                 </div>
                             </div>
                             <div className="text-right space-y-1">
-                                <p className="text-lg font-black text-white">{tx.amount}</p>
+                                <p className="text-lg font-black text-zinc-900">{tx.amount}</p>
                                 <p className="text-[9px] font-black text-slate-600 uppercase tracking-tighter">{tx.method}</p>
                             </div>
                             <div className="pl-4">

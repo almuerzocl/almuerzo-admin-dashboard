@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 
 export async function POST(req: Request) {
     try {
-        const { email, password, first_name, last_name, role } = await req.json();
+        const { email, password, first_name, last_name, role, restaurant_id } = await req.json();
 
         if (!email || !password || !first_name || !last_name || !role) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -40,18 +40,23 @@ export async function POST(req: Request) {
 
         const user = authData.user;
 
-        // 2. Optionally insert/update in public.user_profiles if needed
-        // Sometimes Supabase triggers handle this automatically, but doing it manually overrides the role.
+        // 2. Insert into profiles with the correct role and restaurant_id
+        const profilePayload: any = {
+            id: user.id,
+            email,
+            first_name,
+            last_name,
+            role: role,
+            is_active: true
+        };
+
+        if (restaurant_id) {
+            profilePayload.restaurant_id = restaurant_id;
+        }
+
         const { error: profileError } = await supabaseAdmin
-            .from('user_profiles')
-            .upsert({
-                id: user.id,
-                email,
-                first_name,
-                last_name,
-                role: role,
-                is_active: true
-            });
+            .from('profiles')
+            .upsert(profilePayload);
 
         if (profileError) {
             // Revert auth user if profile creation fails? For safe measure.

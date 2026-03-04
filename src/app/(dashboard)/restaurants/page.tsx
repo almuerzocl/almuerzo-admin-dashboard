@@ -51,7 +51,7 @@ export default function RestaurantsAdmin() {
             let adminMap: Record<string, string> = {};
             if (adminIds.length > 0) {
                 const { data: usersData } = await supabase
-                    .from('user_profiles')
+                    .from('profiles')
                     .select('id, email')
                     .in('id', adminIds);
 
@@ -131,21 +131,21 @@ export default function RestaurantsAdmin() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                    <h1 className="text-3xl font-black tracking-tight text-zinc-900 flex items-center gap-3">
                         <Store className="w-8 h-8 text-blue-500" />
                         Gestión de Restaurantes
                     </h1>
-                    <p className="text-zinc-500 font-medium mt-1">Directorio global y capacidades de los locales asociados</p>
+                    <p className="text-zinc-400 font-medium mt-1">Directorio global y capacidades de los locales asociados</p>
                 </div>
             </div>
 
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="relative flex-1 md:max-w-md">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                     <input
                         type="text"
                         placeholder="Buscar por nombre o correo..."
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-xl py-2 pl-10 pr-4 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500 transition-all font-semibold"
+                        className="w-full bg-white border border-zinc-200 rounded-xl py-2 pl-10 pr-4 text-sm text-zinc-900 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500 transition-all font-semibold"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -163,27 +163,27 @@ export default function RestaurantsAdmin() {
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
                 </div>
             ) : (
-                <div className="bg-zinc-950/50 border border-zinc-800 rounded-[2rem] overflow-hidden overflow-x-auto">
+                <div className="bg-white/50 border border-zinc-200 rounded-[2rem] overflow-hidden overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="border-b border-zinc-800 bg-zinc-900/50">
-                                <th className="px-6 py-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest w-20 text-center">Activo</th>
-                                <th className="px-6 py-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">Nombre del Restaurante</th>
-                                <th className="px-6 py-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">Usuarios Autorizados</th>
-                                <th className="px-6 py-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">E-mail Administrador</th>
-                                <th className="px-6 py-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">Plan Suscrito</th>
+                            <tr className="border-b border-zinc-200 bg-zinc-50/50">
+                                <th className="px-6 py-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest w-20 text-center">Activo</th>
+                                <th className="px-6 py-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest">Nombre del Restaurante</th>
+                                <th className="px-6 py-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest text-center">Usuarios Autorizados</th>
+                                <th className="px-6 py-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest">E-mail Administrador</th>
+                                <th className="px-6 py-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest">Plan Suscrito</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-zinc-800/50">
                             {filtered.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5} className="py-12 text-center text-zinc-500 font-bold text-sm uppercase tracking-widest">
+                                    <td colSpan={5} className="py-12 text-center text-zinc-400 font-bold text-sm uppercase tracking-widest">
                                         No se encontraron restaurantes
                                     </td>
                                 </tr>
                             ) : (
                                 filtered.map(restaurant => (
-                                    <tr key={restaurant.id} className="hover:bg-zinc-900/40 transition-colors">
+                                    <tr key={restaurant.id} className="hover:bg-zinc-50/40 transition-colors">
                                         <td className="px-6 py-4 text-center">
                                             <div className="flex justify-center">
                                                 {restaurant.active ? (
@@ -191,7 +191,7 @@ export default function RestaurantsAdmin() {
                                                         <CheckCircle2 className="w-3.5 h-3.5" />
                                                     </div>
                                                 ) : (
-                                                    <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-600 flex items-center justify-center">
+                                                    <div className="w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center">
                                                         <XCircle className="w-3.5 h-3.5" />
                                                     </div>
                                                 )}
@@ -199,12 +199,12 @@ export default function RestaurantsAdmin() {
                                         </td>
 
                                         <td className="px-6 py-4">
-                                            <p className="font-bold text-zinc-200 text-sm">{restaurant.name}</p>
+                                            <p className="font-bold text-zinc-800 text-sm">{restaurant.name}</p>
                                         </td>
 
                                         <td className="px-6 py-4 flex justify-center">
                                             <select
-                                                className="bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-1.5 text-xs text-white outline-none focus:border-blue-500 font-bold cursor-pointer"
+                                                className="bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-1.5 text-xs text-zinc-900 outline-none focus:border-blue-500 font-bold cursor-pointer"
                                                 value={restaurant.authorized_users}
                                                 onChange={(e) => handleUserLimitChange(restaurant.id, parseInt(e.target.value))}
                                             >
@@ -223,7 +223,7 @@ export default function RestaurantsAdmin() {
                                                 "px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-widest",
                                                 restaurant.plan === 'Pro' ? "bg-blue-500/10 text-blue-500 border border-blue-500/20" :
                                                     restaurant.plan === 'Enterprise' ? "bg-purple-500/10 text-purple-500 border border-purple-500/20" :
-                                                        "bg-zinc-800 text-zinc-400 border border-zinc-700"
+                                                        "bg-zinc-100 text-zinc-400 border border-zinc-300"
                                             )}>
                                                 {restaurant.plan}
                                             </span>
@@ -238,34 +238,34 @@ export default function RestaurantsAdmin() {
 
             {/* Modal for Creating Restaurant */}
             {isModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300">
-                    <div className="bg-zinc-950 border border-zinc-800 rounded-[2.5rem] w-full max-w-lg p-8 shadow-2xl relative animate-in zoom-in-95 duration-300">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-50/80 backdrop-blur-sm p-4 animate-in fade-in duration-300">
+                    <div className="bg-white border border-zinc-200 rounded-[2.5rem] w-full max-w-lg p-8 shadow-2xl relative animate-in zoom-in-95 duration-300">
                         {/* Close button */}
                         <button
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-6 right-6 p-2 rounded-full hover:bg-zinc-900 text-zinc-500 hover:text-white transition-all"
+                            className="absolute top-6 right-6 p-2 rounded-full hover:bg-zinc-50 text-zinc-400 hover:text-zinc-900 transition-all"
                         >
                             <X size={20} />
                         </button>
 
                         <div className="space-y-6">
                             <div>
-                                <h2 className="text-2xl font-black text-white tracking-tight flex items-center gap-3">
+                                <h2 className="text-2xl font-black text-zinc-900 tracking-tight flex items-center gap-3">
                                     <div className="w-10 h-10 rounded-2xl bg-blue-600/10 flex items-center justify-center">
                                         <Plus className="w-5 h-5 text-blue-500" />
                                     </div>
                                     Nuevo Restaurante
                                 </h2>
-                                <p className="text-zinc-500 text-sm font-medium mt-1">Completa los datos para dar de alta al socio</p>
+                                <p className="text-zinc-400 text-sm font-medium mt-1">Completa los datos para dar de alta al socio</p>
                             </div>
 
                             <div className="space-y-4">
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-1">Nombre del Restaurante</label>
+                                    <label className="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Nombre del Restaurante</label>
                                     <input
                                         type="text"
                                         placeholder="Ej: La Piccola Italia"
-                                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-blue-500 transition-all font-semibold"
+                                        className="w-full bg-zinc-50 border border-zinc-200 rounded-xl py-3 px-4 text-zinc-900 focus:outline-none focus:border-blue-500 transition-all font-semibold"
                                         value={newRestaurant.name}
                                         onChange={(e) => setNewRestaurant({ ...newRestaurant, name: e.target.value })}
                                     />
@@ -273,9 +273,9 @@ export default function RestaurantsAdmin() {
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-1">Usuarios Autorizados</label>
+                                        <label className="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Usuarios Autorizados</label>
                                         <select
-                                            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-3 text-white focus:outline-none focus:border-blue-500 transition-all font-semibold cursor-pointer"
+                                            className="w-full bg-zinc-50 border border-zinc-200 rounded-xl py-3 px-3 text-zinc-900 focus:outline-none focus:border-blue-500 transition-all font-semibold cursor-pointer"
                                             value={newRestaurant.authorized_users}
                                             onChange={(e) => setNewRestaurant({ ...newRestaurant, authorized_users: parseInt(e.target.value) })}
                                         >
@@ -285,9 +285,9 @@ export default function RestaurantsAdmin() {
                                         </select>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-1">Plan de Suscripción</label>
+                                        <label className="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Plan de Suscripción</label>
                                         <select
-                                            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-3 text-white focus:outline-none focus:border-blue-500 transition-all font-semibold cursor-pointer"
+                                            className="w-full bg-zinc-50 border border-zinc-200 rounded-xl py-3 px-3 text-zinc-900 focus:outline-none focus:border-blue-500 transition-all font-semibold cursor-pointer"
                                             value={newRestaurant.subscription_plan}
                                             onChange={(e) => setNewRestaurant({ ...newRestaurant, subscription_plan: e.target.value })}
                                         >
@@ -303,7 +303,7 @@ export default function RestaurantsAdmin() {
                                         onClick={() => setNewRestaurant({ ...newRestaurant, is_active: !newRestaurant.is_active })}
                                         className={cn(
                                             "w-12 h-6 rounded-full transition-all relative border",
-                                            newRestaurant.is_active ? "bg-emerald-500/20 border-emerald-500/50" : "bg-zinc-900 border-zinc-800"
+                                            newRestaurant.is_active ? "bg-emerald-500/20 border-emerald-500/50" : "bg-zinc-50 border-zinc-200"
                                         )}
                                     >
                                         <div className={cn(
@@ -311,14 +311,14 @@ export default function RestaurantsAdmin() {
                                             newRestaurant.is_active ? "right-1 bg-emerald-500 shadow-lg shadow-emerald-500/50" : "left-1 bg-zinc-700"
                                         )} />
                                     </button>
-                                    <span className="text-sm font-bold text-zinc-300">Restaurante Activo</span>
+                                    <span className="text-sm font-bold text-zinc-600">Restaurante Activo</span>
                                 </div>
                             </div>
 
                             <div className="pt-4 flex gap-3">
                                 <Button
                                     onClick={() => setIsModalOpen(false)}
-                                    className="flex-1 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 font-bold h-12 rounded-2xl border border-zinc-800"
+                                    className="flex-1 bg-zinc-50 hover:bg-zinc-100 text-zinc-400 font-bold h-12 rounded-2xl border border-zinc-200"
                                 >
                                     Cancelar
                                 </Button>
